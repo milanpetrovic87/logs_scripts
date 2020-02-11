@@ -1,0 +1,23 @@
+PetrovicM2@RUDSAC009531 ~
+$ sed 's/png/png\n/g' logs.txt | echo "png" = $(grep -c "png")
+19
+
+PetrovicM2@RUDSAC009531 ~
+$ cat logs.txt | echo "png" = $(grep -c png)
+png = 19
+
+PetrovicM2@RUDSAC009531 ~
+$ cat logs.txt | echo "png" = $(grep -c png) ; cat logs.txt | echo "jpg" = $(grep -c jpg)
+png = 19
+jpg = 2
+
+b = 0
+z = 0
+with open("logs.txt") as f:    
+    for i in f:
+        if "png" in i:
+            b = b +1
+        elif "jpg" in i:
+            z = z + 1
+    print ("png" + " =", b)
+    print ("jpg" + " =" , z)
